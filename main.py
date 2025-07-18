@@ -7,8 +7,11 @@ import numpy as np
 from keras.models import load_model
 from PIL import Image
 import io
-import os
 from flask_cors import CORS
+import os
+print("Current path:", os.getcwd())
+print("Files here:", os.listdir("."))
+print("Model folder:", os.listdir("model"))
 
 app = Flask(__name__)
 CORS(app)
