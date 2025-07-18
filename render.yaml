@@ -6,7 +6,7 @@ services:
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: python main.py
-    repo: https://github.com/Aditya-Kumrawat/leaf-dieseases-detect
+    repo: https://github.com/Aditya-Kumrawat/leaf-diseases-detect
     branch: main
     autoDeploy: true
     envVars:
