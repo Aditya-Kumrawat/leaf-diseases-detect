@@ -5,8 +5,8 @@ services:
     plan: free
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
-    repo: https://github.com/YOUR_USERNAME/YOUR_REPO_NAME
+    startCommand: python main.py
+    repo: https://github.com/Aditya-Kumrawat/leaf-dieseases-detect
     branch: main
     autoDeploy: true
     envVars:
