@@ -11,7 +11,7 @@ from flask_cors import CORS
 import os
 print("Current path:", os.getcwd())
 print("Files here:", os.listdir("."))
-print("Model folder:", os.listdir("model"))
+print("Model folder:", os.listdir("Training/model"))
 
 app = Flask(__name__)
 CORS(app)
@@ -25,7 +25,7 @@ label_name = ['Apple scab','Apple Black rot', 'Apple Cedar apple rust', 'Apple h
 'Tomato Bacterial spot', 'Tomato Early blight', 'Tomato Late blight', 'Tomato Leaf Mold', 'Tomato Septoria leaf spot',
 'Tomato Spider mites', 'Tomato Target Spot', 'Tomato Yellow Leaf Curl Virus', 'Tomato mosaic virus', 'Tomato healthy']
 
-model = load_model('model/leaf_diseases_96x88.h5')
+model = load_model('Training/model/leaf_diseases_96x88.h5')
 
 
 
