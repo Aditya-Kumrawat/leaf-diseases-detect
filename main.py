@@ -9,6 +9,7 @@ from PIL import Image
 import io
 from flask_cors import CORS
 import os
+from werkzeug.utils import secure_filename
 print("Current path:", os.getcwd())
 print("Files here:", os.listdir("."))
 print("Model folder:", os.listdir("Training/model"))
@@ -17,6 +18,7 @@ app = Flask(__name__)
 CORS(app)
 
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 label_name = ['Apple scab','Apple Black rot', 'Apple Cedar apple rust', 'Apple healthy', 'Cherry Powdery mildew',
 'Cherry healthy','Corn Cercospora leaf spot Gray leaf spot', 'Corn Common rust', 'Corn Northern Leaf Blight','Corn healthy', 
@@ -41,7 +43,7 @@ def predict():
 
     try:
         # Save file to static/uploads with a unique name
-        filename = f"{uuid.uuid4().hex}.jpg"
+        filename = secure_filename(f"{uuid.uuid4().hex}.jpg")
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(file_path)
 
